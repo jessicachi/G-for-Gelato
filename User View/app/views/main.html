@@ -1,5 +1,13 @@
+<div class="category-container top-10" ng-repeat="categ in categories">
+	<a href="#/items" ng-click="chooseCategory(this.categ)">
+		<div class="background-image">
+			<div class="category-name">{{categ.name}}</div>
+		</div>
+	</a>
+</div>
+
+
 <div class="row marketing">
-  <pre>{{menuItems|json}}</pre>
   <pre>{{categories|json}}</pre>
 </div>
 

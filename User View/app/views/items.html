@@ -1,1 +1,6 @@
-<p>This is the items view.</p>
+<h3>{{$parent.categoryChoice}}</h3>
+<div class="panel panel-default" ng-repeat="item in menuItemArray | filter: {'category': $parent.categoryChoice}">
+  <div class="panel-body">
+    {{item.title}}
+  </div>
+</div>
