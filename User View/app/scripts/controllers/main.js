@@ -23,4 +23,5 @@ angular.module('userViewApp')
     	$rootScope.categoryChoice = categ.name;
     	console.log($scope.categoryChoice)
 	};
+
   });

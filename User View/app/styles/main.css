@@ -5,11 +5,16 @@
   height: 150px;
   background-image: url('http://placekitten.com/g/600/400');
   background-size: cover;
+  position: relative;
 }
 
 .category-name{
   padding-top: 10px;
   background: rgba(255,255,255,0.6);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

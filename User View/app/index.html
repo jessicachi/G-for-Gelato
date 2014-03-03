@@ -17,27 +17,25 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/push-component.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="userViewApp">
+  <body ng-app="userViewApp" class="cbp-spmenu-push">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+      <h3>My Orders</h3>
+    </nav>
     <!-- Add your site or application content here -->
     <nav class="main-nav">
       <div class="container">
-        <div class="logo pull-left"><h3>G for Gelato</h3></div>
-        <button class="btn btn-success pull-right top-10 toggle-right">Order</button>
+        <div class="logo pull-left"><a href="/#/main"><h3>G for Gelato</h3></a></div>
+        <button id="showRightPush" class="btn btn-success pull-right top-10 toggle-right">Order</button>
       </div>
     </nav>
     
     <div class="container" ng-view=""></div>
-
-    <div class="slidebar-right">
-      <!-- Your right Slidebar content. -->
-      <h2>My Orders</h2>
-    </div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -61,6 +59,20 @@
         <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/src/modernizr.custom.js"></script>
+        <script src="scripts/src/classie.js"></script>
+        <script>
+          var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
+            showRight = document.getElementById( 'showRight' ),
+            showRightPush = document.getElementById( 'showRightPush' ),
+            body = document.body;
+
+          showRightPush.onclick = function() {
+            classie.toggle( this, 'active' );
+            classie.toggle( body, 'cbp-spmenu-push-toleft' );
+            classie.toggle( menuRight, 'cbp-spmenu-open' );
+          };
+        </script>
         <!-- endbuild -->
 </body>
 </html>
