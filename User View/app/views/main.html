@@ -1,11 +1,12 @@
-<div class="category-container" ng-repeat="categ in categories">
-	<a href="#/items" ng-click="chooseCategory(this.categ)">
-		<div class="background-image">
-			<div class="category-name">{{categ.name}}</div>
-		</div>
-	</a>
-</div>
-
-<div class="footer">
-  <p>♥ from the EMU team</p>
+<div class="container clear-padding">
+	<div class="category-container" ng-repeat="categ in categories">
+		<a href="#/items" ng-click="chooseCategory(this.categ)">
+			<div back-img="../images/{{categ.name}}.jpg" class="background-image">
+				<div class="category-name">{{categ.name}}</div>
+			</div>
+		</a>
+	</div>
+	<div class="footer">
+	  <p>♥ from the EMU team</p>
+	</div>
 </div>

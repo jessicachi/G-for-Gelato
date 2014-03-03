@@ -1,6 +1,9 @@
 <h3>{{$parent.categoryChoice}}</h3>
-<div class="panel panel-default" ng-repeat="item in menuItemArray | filter: {'category': $parent.categoryChoice}">
-  <div class="panel-body">
-    {{item.title}}
-  </div>
+<div class="container">
+	<div class="list-panel" ng-repeat="item in menuItemArray | filter: {'category': $parent.categoryChoice}">
+		<div class="panel-body">
+			<div class="panel-body-title">{{item.title}}</div>
+			<span class="panel-body-description">{{item.description}}</span>
+		</div>
+	</div>
 </div>
