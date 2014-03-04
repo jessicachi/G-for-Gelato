@@ -62,7 +62,10 @@
 }
 
 /* Vertical menu that slides from the left or right */
-
+.main-nav.cbp-main-right {
+	right: 275px;
+	left: -275px;
+}
 
 .cbp-spmenu-right {
 	right: -275px;

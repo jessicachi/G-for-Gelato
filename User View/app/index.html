@@ -17,7 +17,9 @@
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
     <link rel="stylesheet" href="styles/push-component.css">
+    <link rel="stylesheet" href="styles/animate.css">
     <!-- endbuild -->
   </head>
   <body ng-app="userViewApp" class="cbp-spmenu-push">
@@ -28,14 +30,14 @@
       <h3>My Orders</h3>
     </nav>
     <!-- Add your site or application content here -->
-    <nav class="main-nav">
+    <nav id="main-nav" class="main-nav">
       <div class="container">
         <div class="logo pull-left"><a href="/#/main"><h3>G for Gelato</h3></a></div>
         <button id="showRightPush" class="btn btn-success pull-right top-10 toggle-right">Order</button>
       </div>
     </nav>
     
-    <div ng-view=""></div>
+    <div class="slide" ng-view=""></div>
 
     <!--[if lt IE 9]>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
@@ -55,6 +57,7 @@
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src='https://cdn.firebase.com/v0/firebase.js'></script>
         <script src='https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js'></script>
         <script src="scripts/app.js"></script>
@@ -65,12 +68,14 @@
           var menuRight = document.getElementById( 'cbp-spmenu-s2' ),
             showRight = document.getElementById( 'showRight' ),
             showRightPush = document.getElementById( 'showRightPush' ),
+            mainNav = document.getElementById( 'main-nav' ),
             body = document.body;
 
           showRightPush.onclick = function() {
             classie.toggle( this, 'active' );
             classie.toggle( body, 'cbp-spmenu-push-toleft' );
             classie.toggle( menuRight, 'cbp-spmenu-open' );
+            classie.toggle( mainNav, 'cbp-main-right' );
           };
         </script>
         <!-- endbuild -->

@@ -5,6 +5,7 @@ angular.module('userViewApp', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
+  'ngAnimate',
   'firebase'
 ])
   .config(function ($routeProvider) {
