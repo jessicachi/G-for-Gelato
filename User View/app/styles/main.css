@@ -3,7 +3,10 @@
 .bot-10 { margin-bottom: 10px }
 .clear-margins { margin: 0 }
 .clear-padding { padding: 0 }
-
+.container {
+  position: relative;
+  z-index: 1;
+}
 .slide {
     position: absolute;
     left: 0;
@@ -12,17 +15,18 @@
     height: 100%;
 }
 .slide.ng-enter {
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    -o-transition: all 0.35s ease;
+    transition: all 0.35s ease;
     z-index: 10;
 }
 .slide.ng-leave {
-    -webkit-transition: all 0.7s ease;
-    -moz-transition: all 0.7s ease;
-    -o-transition: all 0.7s ease;
-    transition: all 0.7s ease;
+    -webkit-transition: all 1.2s ease;
+    -moz-transition: all 1.2s ease;
+    -o-transition: all 1.2s ease;
+    transition: all 1.2s ease;
+    z-index: 0;
 }
 .slide.ng-enter {
     left: 100%;
