@@ -9,6 +9,9 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+      <meta name="apple-mobile-web-app-title" content="G for Gelato">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -26,14 +29,26 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2" ng-controller="OrderCtrl">
       <h3>My Orders</h3>
+      <div class="order-container col-xs-12">
+          <ul>
+              <li ng-repeat="order in myPlate track by $index">
+                <button type="button" class="close pull-left" aria-hidden="true" ng-click="removeFromPlate(this.order, myPlate)">&times;</button>
+                <div class="order-title"><span>{{order.title}}</span> <small>({{order.category}})</small></div>
+                <span class="money pull-right">${{order.price | number : 2}}</span>
+              </li>
+          </ul>
+          <div class="order-total">Total: <span class="money pull-right">${{myTotal | number : 2}}</span></div>
+          <div class="order-button-block"><button class="btn btn-place-order" ng-click="order()">Order</button></div>
+          <input type="number" ng-model="tableNum">
+      </div>
     </nav>
     <!-- Add your site or application content here -->
     <nav id="main-nav" class="main-nav">
       <div class="container">
-        <div class="logo pull-left"><a href="/#/main"><h3>G for Gelato</h3></a></div>
-        <button id="showRightPush" class="btn btn-success pull-right top-10 toggle-right">Order</button>
+        <div class="logo pull-left"><a href="/#/main"><h4>G for Gelato</h4></a></div>
+        <button id="showRightPush" class="btn-show-order pull-right top-10 toggle-right"><i class="fa fa-cutlery"></i></button>
       </div>
     </nav>
     

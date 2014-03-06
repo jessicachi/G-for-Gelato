@@ -21,4 +21,12 @@ angular.module('userViewApp', [
       .otherwise({
         redirectTo: '/'
       });
+  })
+
+  .run(function($rootScope, $location, $http) {
+  // Here be global functions and variables
+  $rootScope.$on('$routeChangeSuccess', function () {
+    $rootScope.myPage = $location.path().substring($location.path().indexOf('/', 1)).replace("/","");
+    window.scrollTo(0,0);
   });
+});
