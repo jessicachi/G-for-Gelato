@@ -5,12 +5,11 @@
         <div class="col-xs-6 col-md-3" ng-repeat="(key,categ) in categories">
             <a href="" class="thumbnail category-thumbnail">
                 <button type="button" class="close" aria-hidden="true" ng-click="deleteCateg(key)">&times;</button>
-                <img src="http://placehold.it/250x180" alt="">
+                <img ng-src="../images/{{categ.name}}.jpg" alt="" style="max-height: 175px">
                 <h5>{{categ.name}}</h5>
             </a>
         </div>
     </div>
-    <pre>{{categories|json}}</pre>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('appApp')
-  .controller('OrdersCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('OrdersCtrl', function ($scope, $firebase) {
+  	var orders = new Firebase('https://menuapp.firebaseio.com/Orders');
+  	$scope.orders = $firebase(orders);
   });

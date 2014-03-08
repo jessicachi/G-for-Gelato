@@ -21,6 +21,7 @@
 .hidden {
   display: none;
 }
+
 /* Animation */
 .slide {
   position: absolute;
@@ -84,8 +85,8 @@
           animation-duration: 400ms;
 }
 .scrollMask.ng-enter{
-    -webkit-animation-name: slin-scrollMask;
-            animation-name: slin-scrollMask;
+  -webkit-animation-name: slin-scrollMask;
+          animation-name: slin-scrollMask;
 }
 @keyframes slin-scrollMask {
   from { transform: translateX(100%); box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2);  }
@@ -95,6 +96,7 @@
   from { -webkit-transform: translateX(100%); -webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.2);  }
   to   { -webkit-transform: translateX(0);    -webkit-box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.02); }
 }
+
 /* Navigation */
 .main-nav{
   background: #fff;
