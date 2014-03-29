@@ -1,8 +1,10 @@
 <div class="col-sm-11 col-sm-offset-1">
 	<h3 class="page-header">Orders</h3>
-	<div class="panel panel-default" ng-repeat="order in orders">
-		<div class="panel-heading">
-			<h3 class="panel-title">Table {{order.table}}</h3>
+	<div class="panel panel-default" ng-class="{'panel-success':order.confirmed}" ng-repeat="(key,order) in orders">
+		<div class="panel-heading clearfix">
+			<h3 class="panel-title pull-left">Table {{order.table}}</h3>
+			<button class="btn btn-default btn-sm pull-right" ng-hide="order.confirmed" ng-click="confirmOrder(key, this.order)">Confirm Order</button>
+			<button class="btn btn-danger btn-sm pull-right" ng-show="order.confirmed" ng-click="deleteOrder(key)">Delete Order</button>
 		</div>
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="item in order.order">
